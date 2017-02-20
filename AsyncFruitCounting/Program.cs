@@ -36,7 +36,7 @@ namespace AsyncFruitCounting
         {
             return Task.Run(() =>
             {
-                for (int i = 1; i < pearCount; i++)
+                for (int i = 1; i <= pearCount; i++)
                 {
                     Console.WriteLine($"{i} pear{(i == 1 ? "" : "s")}");
                 }
@@ -48,7 +48,7 @@ namespace AsyncFruitCounting
         {
             return Task.Run(() =>
             {
-                for (int i = 1; i < appleCount; i++)
+                for (int i = 1; i <= appleCount; i++)
                 {
                     Console.WriteLine($"{i} apple{(i == 1 ? "" : "s")}");
                 }
