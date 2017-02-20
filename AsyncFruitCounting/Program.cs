@@ -8,15 +8,28 @@ namespace AsyncFruitCounting
 {
     class Program
     {
-        static async void Main(string[] args)
+        static void Main(string[] args)
+        {
+            try
+            {
+                DoStuff();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
+
+            Console.ReadLine();
+        }
+
+        private static async void DoStuff()
         {
             int apples = 200;
             int pears = 175;
             Task appleTask = CountApplesAsync(apples);
             Task pearTask = CountPearsAsync(pears);
             await Task.WhenAll(appleTask, pearTask);
-            Console.WriteLine($"You have {apples} apple{(apples == 1 ? "" : "s")} and {pears} pear{(pears == 1 ? "" : "s")}");
-            Console.ReadLine();
+            Console.WriteLine($"You should have {apples} apple{(apples == 1 ? "" : "s")} and {pears} pear{(pears == 1 ? "" : "s")}");
         }
 
         private static Task CountPearsAsync(int pearCount)
@@ -36,10 +49,10 @@ namespace AsyncFruitCounting
             return Task.Run(() =>
             {
                 for (int i = 1; i < appleCount; i++)
-            {
-                Console.WriteLine($"{i} apple{(i == 1 ? "" : "s")}");
-            }
-            Console.WriteLine($"All apples have been counted. You have {appleCount} apple{(appleCount == 1 ? "" : "s")}");
+                {
+                    Console.WriteLine($"{i} apple{(i == 1 ? "" : "s")}");
+                }
+                Console.WriteLine($"All apples have been counted. You have {appleCount} apple{(appleCount == 1 ? "" : "s")}");
             });
         }
     }
