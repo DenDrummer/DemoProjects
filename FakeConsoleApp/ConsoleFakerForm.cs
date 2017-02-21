@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FakeConsoleApp
 {
-    public partial class Form1 : Form
+    public partial class ConsoleFakerForm : Form
     {
-        public Form1()
+        public ConsoleFakerForm()
         {
             InitializeComponent();
         }
