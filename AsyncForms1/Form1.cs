@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -26,15 +27,24 @@ namespace AsyncForms1
             //}
         }
 
-        private void DoStuffButton_Click(object sender, EventArgs e)
+        private async void DoStuffButton_Click(object sender, EventArgs e)
         {
             DoStuffButton.Enabled = false;
-            for (int i = StuffProgressBar.Value; i < StuffProgressBar.Maximum / StuffProgressBar.Step; i++)
-            {
-                StuffProgressBar.PerformStep();
-            }
+            CancellationTokenSource cancelToken = new CancellationTokenSource();
+            await FinishProgressBar(cancelToken); ;
             StuffProgressBar.Value = 0;
             DoStuffButton.Enabled = true;
+        }
+
+        private Task FinishProgressBar(CancellationTokenSource cancelToken)
+        {
+            return Task.Run(() =>
+            {
+                for (int i = StuffProgressBar.Value; i <= StuffProgressBar.Maximum / StuffProgressBar.Step; i++)
+                {
+                    StuffProgressBar.PerformStep();
+                }
+            });
         }
     }
 }

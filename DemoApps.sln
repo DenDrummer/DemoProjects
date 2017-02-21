@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncForms1", "AsyncForms1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncFruitCounting", "AsyncFruitCounting\AsyncFruitCounting.csproj", "{AAFB2CA2-907F-4EEA-B703-756B4A07E488}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeConsoleApp", "FakeConsoleApp\FakeConsoleApp.csproj", "{5F2446EA-54AC-41DC-AFFF-DC031073AF12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AAFB2CA2-907F-4EEA-B703-756B4A07E488}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAFB2CA2-907F-4EEA-B703-756B4A07E488}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAFB2CA2-907F-4EEA-B703-756B4A07E488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F2446EA-54AC-41DC-AFFF-DC031073AF12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F2446EA-54AC-41DC-AFFF-DC031073AF12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F2446EA-54AC-41DC-AFFF-DC031073AF12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F2446EA-54AC-41DC-AFFF-DC031073AF12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
