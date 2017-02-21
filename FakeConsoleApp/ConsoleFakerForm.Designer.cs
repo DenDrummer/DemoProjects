@@ -41,28 +41,29 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextLabel.Location = new System.Drawing.Point(12, 26);
             this.TextLabel.Name = "TextLabel";
-            this.TextLabel.Size = new System.Drawing.Size(358, 137);
+            this.TextLabel.Size = new System.Drawing.Size(358, 138);
             this.TextLabel.TabIndex = 0;
             this.TextLabel.Text = "TextLabel";
             // 
             // TimeLabel
             // 
             this.TimeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TimeLabel.Location = new System.Drawing.Point(224, 9);
+            this.TimeLabel.Location = new System.Drawing.Point(221, 9);
             this.TimeLabel.Name = "TimeLabel";
-            this.TimeLabel.Size = new System.Drawing.Size(146, 17);
+            this.TimeLabel.Size = new System.Drawing.Size(149, 17);
             this.TimeLabel.TabIndex = 1;
             this.TimeLabel.Text = "20/02/2017 10:12:0";
             // 
             // SendMsgButton
             // 
             this.SendMsgButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.SendMsgButton.Location = new System.Drawing.Point(295, 166);
+            this.SendMsgButton.Location = new System.Drawing.Point(295, 167);
             this.SendMsgButton.Name = "SendMsgButton";
-            this.SendMsgButton.Size = new System.Drawing.Size(75, 23);
+            this.SendMsgButton.Size = new System.Drawing.Size(75, 22);
             this.SendMsgButton.TabIndex = 2;
             this.SendMsgButton.Text = "Send";
             this.SendMsgButton.UseVisualStyleBackColor = true;
+            this.SendMsgButton.Click += new System.EventHandler(this.SendMsgButton_Click);
             // 
             // SendMsgTextBox
             // 
@@ -85,6 +86,7 @@
             this.MinimumSize = new System.Drawing.Size(400, 250);
             this.Name = "ConsoleFakerForm";
             this.Text = "Console Faker";
+            this.Load += new System.EventHandler(this.ConsoleFakerForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
