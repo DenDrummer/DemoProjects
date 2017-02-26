@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AsyncForms1
+﻿namespace Demo.AsyncForms1
 {
     partial class Form1
     {

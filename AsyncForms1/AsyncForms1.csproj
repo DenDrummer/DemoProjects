@@ -7,8 +7,8 @@
     <ProjectGuid>{819C07F4-42E1-47F0-B4C3-9DAFAECA742A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AsyncForms1</RootNamespace>
-    <AssemblyName>AsyncForms1</AssemblyName>
+    <RootNamespace>Demo.AsyncForms1</RootNamespace>
+    <AssemblyName>Demo.AsyncForms1</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

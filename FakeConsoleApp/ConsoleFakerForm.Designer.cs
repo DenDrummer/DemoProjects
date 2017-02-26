@@ -1,4 +1,4 @@
-﻿namespace FakeConsoleApp
+﻿namespace Demo.FakeConsoleApp
 {
     partial class ConsoleFakerForm
     {

@@ -7,8 +7,8 @@
     <ProjectGuid>{AAFB2CA2-907F-4EEA-B703-756B4A07E488}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AsyncFruitCounting</RootNamespace>
-    <AssemblyName>AsyncFruitCounting</AssemblyName>
+    <RootNamespace>Demo.AsyncFruitCounting</RootNamespace>
+    <AssemblyName>Demo.AsyncFruitCounting</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

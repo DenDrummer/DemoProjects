@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FakeConsoleApp
+namespace Demo.FakeConsoleApp
 {
     public partial class ConsoleFakerForm : Form
     {
@@ -52,18 +51,22 @@ namespace FakeConsoleApp
         {
             if (!string.IsNullOrEmpty(SendMsgTextBox.Text))
             {
+
                 if (SendMsgTextBox.Text.Equals("quit"))
                 {
                     updateTime = false;
                 }
-                if (SendMsgTextBox.Text.Equals("start"))
+                else if (SendMsgTextBox.Text.Equals("start"))
                 {
                     updateTime = true;
                     Task timeTask = UpdateTime();
                     await Task.WhenAll(timeTask);
                 }
-                inputString = SendMsgTextBox.Text;
-                SendMsgTextBox.Text = "";
+                else
+                {
+                    inputString = SendMsgTextBox.Text;
+                    SendMsgTextBox.Text = "";
+                }
             }
         }
     }
