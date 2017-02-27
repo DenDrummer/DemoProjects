@@ -28,22 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TextLabel = new System.Windows.Forms.Label();
             this.TimeLabel = new System.Windows.Forms.Label();
             this.SendMsgButton = new System.Windows.Forms.Button();
             this.SendMsgTextBox = new System.Windows.Forms.TextBox();
+            this.LogBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // TextLabel
-            // 
-            this.TextLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextLabel.Location = new System.Drawing.Point(12, 26);
-            this.TextLabel.Name = "TextLabel";
-            this.TextLabel.Size = new System.Drawing.Size(358, 138);
-            this.TextLabel.TabIndex = 0;
-            this.TextLabel.Text = "TextLabel";
             // 
             // TimeLabel
             // 
@@ -73,16 +62,35 @@
             this.SendMsgTextBox.Name = "SendMsgTextBox";
             this.SendMsgTextBox.Size = new System.Drawing.Size(277, 22);
             this.SendMsgTextBox.TabIndex = 3;
+            this.SendMsgTextBox.TabStop = false;
+            // 
+            // LogBox
+            // 
+            this.LogBox.AcceptsReturn = true;
+            this.LogBox.AcceptsTab = true;
+            this.LogBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LogBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LogBox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.LogBox.Location = new System.Drawing.Point(12, 29);
+            this.LogBox.Multiline = true;
+            this.LogBox.Name = "LogBox";
+            this.LogBox.ReadOnly = true;
+            this.LogBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.LogBox.Size = new System.Drawing.Size(358, 132);
+            this.LogBox.TabIndex = 5;
+            this.LogBox.TabStop = false;
             // 
             // ConsoleFakerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 201);
+            this.Controls.Add(this.LogBox);
             this.Controls.Add(this.SendMsgTextBox);
             this.Controls.Add(this.SendMsgButton);
             this.Controls.Add(this.TimeLabel);
-            this.Controls.Add(this.TextLabel);
             this.MinimumSize = new System.Drawing.Size(400, 250);
             this.Name = "ConsoleFakerForm";
             this.Text = "Console Faker";
@@ -93,11 +101,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label TextLabel;
         private System.Windows.Forms.Label TimeLabel;
         private System.Windows.Forms.Button SendMsgButton;
         private System.Windows.Forms.TextBox SendMsgTextBox;
+        private System.Windows.Forms.TextBox LogBox;
     }
 }
 
