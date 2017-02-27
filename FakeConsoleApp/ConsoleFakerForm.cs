@@ -54,18 +54,26 @@ namespace Demo.FakeConsoleApp
 
                 if (SendMsgTextBox.Text.Equals("quit"))
                 {
+                    inputString = SendMsgTextBox.Text;
+                    SendMsgTextBox.Text = "";
+                    TextLabel.Text = text.Append("\n" + inputString).ToString();
                     updateTime = false;
+                    
                 }
                 else if (SendMsgTextBox.Text.Equals("start"))
                 {
+                    inputString = SendMsgTextBox.Text;
+                    SendMsgTextBox.Text = "";
+                    TextLabel.Text = text.Append("\n" + inputString).ToString();
                     updateTime = true;
-                    Task timeTask = UpdateTime();
+                    Task timeTask = UpdateTime();                    
                     await Task.WhenAll(timeTask);
                 }
                 else
                 {
                     inputString = SendMsgTextBox.Text;
-                    SendMsgTextBox.Text = "";
+                    SendMsgTextBox.Text = "";                    
+                    TextLabel.Text = text.Append("\n" + inputString).ToString();
                 }
             }
         }
