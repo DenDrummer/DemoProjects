@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeConsoleApp", "FakeConso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APM", "APM\APM.csproj", "{EF810564-1519-43EA-AF47-1975840A4A89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EAP", "EAP\EAP.csproj", "{4EBBBB2F-5FEF-4798-885D-83CBF0726296}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EF810564-1519-43EA-AF47-1975840A4A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF810564-1519-43EA-AF47-1975840A4A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF810564-1519-43EA-AF47-1975840A4A89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EBBBB2F-5FEF-4798-885D-83CBF0726296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EBBBB2F-5FEF-4798-885D-83CBF0726296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EBBBB2F-5FEF-4798-885D-83CBF0726296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EBBBB2F-5FEF-4798-885D-83CBF0726296}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

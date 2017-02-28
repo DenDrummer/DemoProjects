@@ -10,21 +10,29 @@ namespace APM
 {
     class Program
     {
-        private delegate int GetCountEvenNumbersHandler(int min, int count);
+        private delegate int GetCountEvenNumbersHandler(int min, int max);
         private static GetCountEvenNumbersHandler getCountEvenNumbersCaller;
+        private delegate int GetCountOddNumbersHandler(int min, int max);
+        private static GetCountOddNumbersHandler getCountOddNumbersCaller;
 
         static void Main(string[] args)
         {
-            Console.WriteLine(EndCountEvenNumbers(BeginCountEvenNumbers(1, 10, null, null))); 
+            Console.WriteLine("There are " + EndCountEvenNumbers(BeginCountEvenNumbers(1, 10, null, null)) + " even numbers between 1 and 10.");
+            Console.WriteLine("There are " + EndCountOddNumbers(BeginCountOddNumbers(1,10,null,null)) + " odd numbers between 1 and 10.");
             Console.ReadLine();
         }
 
-        public static int CountEvenNumbers(int min, int count)
+        public static int CountEvenNumbers(int min, int max)
         {
             //PrintCurrentThreadId("GetPrimeCount");
             //Provides a set of methods for querying that implements
             //ParallelQuery(TSource)
-            return ParallelEnumerable.Range(min, count).Count(n => n % 2 == 0);
+            return ParallelEnumerable.Range(min, max).Count(n => n % 2 == 0);
+        }
+
+        public static int CountOddNumbers(int min, int max)
+        {
+            return ParallelEnumerable.Range(min, max).Count(n => n % 2 != 0);
         }
 
         //IAsyncResult represents the status of an asynchronous operation
@@ -33,16 +41,32 @@ namespace APM
         //This method begins the asynchronous operation
         //AsyncCallBack Delegat references a method to be called
         //when a corresponding asyncronous operation completes (not needed here)
-        public static IAsyncResult BeginCountEvenNumbers(int min, int count, AsyncCallback callback, object userState)
+        public static IAsyncResult BeginCountEvenNumbers(int min, int max, AsyncCallback callback, object userState)
         {
             getCountEvenNumbersCaller = CountEvenNumbers;
-            return getCountEvenNumbersCaller.BeginInvoke(min, count, callback, userState);
+            //Executes the specified delegate asynchronously with the specified arguments
+            //on the thread that the control's underlying handle was
+            //created on.
+            return getCountEvenNumbersCaller.BeginInvoke(min, max, callback, userState);
+        }
+
+        public static IAsyncResult BeginCountOddNumbers(int min, int max, AsyncCallback callback, object userState)
+        {
+            getCountOddNumbersCaller = CountOddNumbers;
+            return getCountOddNumbersCaller.BeginInvoke(min, max, callback, userState);
         }
 
         //This method ends the asyncrhonous operation
         public static int EndCountEvenNumbers(IAsyncResult result)
         {
             return getCountEvenNumbersCaller.EndInvoke(result);
+        }
+
+        public static int EndCountOddNumbers(IAsyncResult result)
+        {
+            //returns the return value of the asynchronous operation
+            //represented by the IAsyncResult passed
+            return getCountOddNumbersCaller.EndInvoke(result);
         }
     }
 }
