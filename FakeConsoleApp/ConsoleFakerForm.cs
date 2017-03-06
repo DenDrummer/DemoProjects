@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace Demo.FakeConsoleApp
         private int delayedMessages = 0;
         private bool closeApp = false;
         private string inputString = null;
+        private static readonly Task completedTask = Task.FromResult(0);
         public ConsoleFakerForm()
         {
             InitializeComponent();
@@ -21,10 +23,13 @@ namespace Demo.FakeConsoleApp
         private async void Program()
         {
             await AppendLine(LogBox, "Welcome");
+            await AppendLine(LogBox, "Type \"commands\" for a list of commands");
         }
 
         private void ConsoleFakerForm_Load(object sender, EventArgs e)
         {
+            updateTime = true;
+            UpdateTime();
         }
 
         private Task UpdateTime()
@@ -46,13 +51,30 @@ namespace Demo.FakeConsoleApp
         {
             if (!string.IsNullOrEmpty(SendMsgTextBox.Text))
             {
-                Task timeTask = Task.FromResult(0);
+                Task timeTask = completedTask;
                 Task lineTask;
                 inputString = SendMsgTextBox.Text;
                 SendMsgTextBox.Text = "";
                 switch (inputString.ToLower().Split(' ')[0])
                 {
-                    #region delayed ##
+                    case "commands":
+                        lineTask = Task.Run(async () =>
+                        {
+                            await AppendLine(LogBox, "• commands");
+                            Thread.Sleep(500);
+                            await AppendLine(LogBox, "• delayed [delay in seconds] [message]");
+                            Thread.Sleep(500);
+                            await AppendLine(LogBox, "• quit");
+                            Thread.Sleep(500);
+                            await AppendLine(LogBox, "• rickroll");
+                            Thread.Sleep(500);
+                            await AppendLine(LogBox, "• start");
+                            Thread.Sleep(500);
+                            await AppendLine(LogBox, "• stop");
+                            Thread.Sleep(500);
+                        });
+                        break;
+                    #region delayed <int time> <string msg>
                     case "delayed":
                         delayedMessages++;
                         int seconds;
@@ -65,7 +87,7 @@ namespace Demo.FakeConsoleApp
                                 for (int i = 2; i < inputString.Split(' ').Length; i++)
                                 {
                                     msg.Append(inputString.Split(' ')[i]);
-                                    if (i != inputString.Split(' ').Length -1)
+                                    if (i != inputString.Split(' ').Length - 1)
                                     {
                                         msg.Append(' ');
                                     }
@@ -87,36 +109,75 @@ namespace Demo.FakeConsoleApp
                     #region quit
                     case "quit":
                         lineTask = AppendLine(LogBox, "Goodbye!");
-                        timeTask = Task.Run(() => Thread.Sleep(10 * 1000));
                         closeApp = true;
                         SendMsgTextBox.Enabled = false;
                         SendMsgButton.Enabled = false;
                         break;
                     #endregion
+                    #region rickroll
+                    case "rickroll":
+                        lineTask = Task.Run(async () =>
+                        {
+                            await AppendLine(LogBox, "Never gonna give you up!");
+                            Thread.Sleep(1000);
+                            await AppendLine(LogBox, "Never gonna let you down!");
+                            Thread.Sleep(1000);
+                            await AppendLine(LogBox, "Never gonna run around");
+                            Thread.Sleep(1000);
+                            await AppendLine(LogBox, "and desert you!");
+                            Thread.Sleep(1000);
+                            await AppendLine(LogBox, "Never gonna make you cry!");
+                            Thread.Sleep(1000);
+                            await AppendLine(LogBox, "Never gonna say goodbye!");
+                            Thread.Sleep(1000);
+                            await AppendLine(LogBox, "Never gonna tell a lie");
+                            Thread.Sleep(1000);
+                            await AppendLine(LogBox, "and hurt you!");
+                            Thread.Sleep(1000);
+                            Process.Start(new ProcessStartInfo("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+                        });
+                        break;
+                    #endregion
                     #region start
                     case "start":
-                        lineTask = AppendLine(LogBox, inputString);
-                        updateTime = true;
-                        timeTask = UpdateTime();
+                        if (!updateTime)
+                        {
+                            lineTask = AppendLine(LogBox, "Clock is now running");
+                            updateTime = true;
+                            timeTask = UpdateTime();
+                        }
+                        else
+                        {
+                            lineTask = AppendLine(LogBox, "Clock is already running");
+                        }
                         break;
                     #endregion
                     #region stop
                     case "stop":
-                        lineTask = AppendLine(LogBox, inputString);
-                        updateTime = false;
+                        if (updateTime)
+                        {
+                            lineTask = AppendLine(LogBox, "Clock is no longer running");
+                            updateTime = false;
+                        }
+                        else
+                        {
+                            lineTask = AppendLine(LogBox, "Clock isn't running");
+                        }
                         break;
                     #endregion
                     #region default
                     default:
                         lineTask = AppendLine(LogBox, inputString);
                         break;
-                    #endregion
+                        #endregion
                 }
                 await Task.WhenAll(lineTask, timeTask);
                 if (closeApp)
                 {
                     //wait on delayed messages
-
+                    updateTime = false;
+                    await Task.WhenAll();
+                    await Task.Run(() => Thread.Sleep(10 * 1000));
                     Application.Exit();
                 }
             }
