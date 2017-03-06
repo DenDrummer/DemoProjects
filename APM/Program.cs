@@ -24,7 +24,7 @@ namespace APM
 
         public static int CountEvenNumbers(int min, int max)
         {
-            //PrintCurrentThreadId("GetPrimeCount");
+           
             //Provides a set of methods for querying that implements
             //ParallelQuery(TSource)
             return ParallelEnumerable.Range(min, max).Count(n => n % 2 == 0);
