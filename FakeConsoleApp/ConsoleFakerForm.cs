@@ -23,6 +23,7 @@ namespace Demo.FakeConsoleApp
         private async void Program()
         {
             await AppendLine(LogBox, "Welcome");
+            await AppendLine(LogBox, "Type \"commands\" for a list of commands");
         }
 
         private void ConsoleFakerForm_Load(object sender, EventArgs e)
@@ -56,6 +57,23 @@ namespace Demo.FakeConsoleApp
                 SendMsgTextBox.Text = "";
                 switch (inputString.ToLower().Split(' ')[0])
                 {
+                    case "commands":
+                        lineTask = Task.Run(async () =>
+                        {
+                            await AppendLine(LogBox, "• commands");
+                            Thread.Sleep(500);
+                            await AppendLine(LogBox, "• delayed [delay in seconds] [message]");
+                            Thread.Sleep(500);
+                            await AppendLine(LogBox, "• quit");
+                            Thread.Sleep(500);
+                            await AppendLine(LogBox, "• rickroll");
+                            Thread.Sleep(500);
+                            await AppendLine(LogBox, "• start");
+                            Thread.Sleep(500);
+                            await AppendLine(LogBox, "• stop");
+                            Thread.Sleep(500);
+                        });
+                        break;
                     #region delayed <int time> <string msg>
                     case "delayed":
                         delayedMessages++;
@@ -101,20 +119,21 @@ namespace Demo.FakeConsoleApp
                         lineTask = Task.Run(async () =>
                         {
                             await AppendLine(LogBox, "Never gonna give you up!");
-                            Thread.Sleep(1 * 1000);
+                            Thread.Sleep(1000);
                             await AppendLine(LogBox, "Never gonna let you down!");
-                            Thread.Sleep(1 * 1000);
+                            Thread.Sleep(1000);
                             await AppendLine(LogBox, "Never gonna run around");
-                            Thread.Sleep(1 * 1000);
+                            Thread.Sleep(1000);
                             await AppendLine(LogBox, "and desert you!");
-                            Thread.Sleep(1 * 1000);
+                            Thread.Sleep(1000);
                             await AppendLine(LogBox, "Never gonna make you cry!");
-                            Thread.Sleep(1 * 1000);
+                            Thread.Sleep(1000);
                             await AppendLine(LogBox, "Never gonna say goodbye!");
-                            Thread.Sleep(1 * 1000);
+                            Thread.Sleep(1000);
                             await AppendLine(LogBox, "Never gonna tell a lie");
-                            Thread.Sleep(1 * 1000);
+                            Thread.Sleep(1000);
                             await AppendLine(LogBox, "and hurt you!");
+                            Thread.Sleep(1000);
                             Process.Start(new ProcessStartInfo("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
                         });
                         break;
