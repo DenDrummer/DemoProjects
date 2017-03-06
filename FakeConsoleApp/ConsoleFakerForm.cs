@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace Demo.FakeConsoleApp
             await AppendLine(LogBox, "Welcome");
         }
 
-        private async void ConsoleFakerForm_Load(object sender, EventArgs e)
+        private void ConsoleFakerForm_Load(object sender, EventArgs e)
         {
             updateTime = true;
             UpdateTime();
@@ -93,6 +94,29 @@ namespace Demo.FakeConsoleApp
                         closeApp = true;
                         SendMsgTextBox.Enabled = false;
                         SendMsgButton.Enabled = false;
+                        break;
+                    #endregion
+                    #region rickroll
+                    case "rickroll":
+                        lineTask = Task.Run(async () =>
+                        {
+                            await AppendLine(LogBox, "Never gonna give you up!");
+                            Thread.Sleep(1 * 1000);
+                            await AppendLine(LogBox, "Never gonna let you down!");
+                            Thread.Sleep(1 * 1000);
+                            await AppendLine(LogBox, "Never gonna run around");
+                            Thread.Sleep(1 * 1000);
+                            await AppendLine(LogBox, "and desert you!");
+                            Thread.Sleep(1 * 1000);
+                            await AppendLine(LogBox, "Never gonna make you cry!");
+                            Thread.Sleep(1 * 1000);
+                            await AppendLine(LogBox, "Never gonna say goodbye!");
+                            Thread.Sleep(1 * 1000);
+                            await AppendLine(LogBox, "Never gonna tell a lie");
+                            Thread.Sleep(1 * 1000);
+                            await AppendLine(LogBox, "and hurt you!");
+                            Process.Start(new ProcessStartInfo("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+                        });
                         break;
                     #endregion
                     #region start
