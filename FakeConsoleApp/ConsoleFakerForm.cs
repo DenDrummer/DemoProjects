@@ -108,7 +108,7 @@ namespace Demo.FakeConsoleApp
                     #endregion
                     #region quit
                     case "quit":
-                        lineTask = AppendLine(LogBox, "Goodbye!");
+                        lineTask = AppendLine(LogBox, "Au revoir!");
                         closeApp = true;
                         SendMsgTextBox.Enabled = false;
                         SendMsgButton.Enabled = false;
