@@ -57,6 +57,7 @@ namespace Demo.FakeConsoleApp
                 SendMsgTextBox.Text = "";
                 switch (inputString.ToLower().Split(' ')[0])
                 {
+                    #region commands
                     case "commands":
                         lineTask = Task.Run(async () =>
                         {
@@ -74,6 +75,7 @@ namespace Demo.FakeConsoleApp
                             Thread.Sleep(500);
                         });
                         break;
+                    #endregion
                     #region delayed <int time> <string msg>
                     case "delayed":
                         delayedMessages++;
