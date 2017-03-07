@@ -12,6 +12,7 @@ namespace Demo.FakeConsoleApp
         private bool updateTime = false;
         private int delayedMessages = 0;
         private bool closeApp = false;
+        private bool closing = false;
         private string inputString = null;
         private static readonly Task completedTask = Task.FromResult(0);
         public ConsoleFakerForm()
@@ -94,16 +95,16 @@ namespace Demo.FakeConsoleApp
                                         msg.Append(' ');
                                     }
                                 }
-                                lineTask = DelayedMsg(LogBox, seconds, msg.ToString());
+                                lineTask = DelayedMsg(this, seconds, msg.ToString());
                             }
                             else
                             {
-                                lineTask = DelayedMsg(LogBox, seconds, null);
+                                lineTask = DelayedMsg(this, seconds, null);
                             }
                         }
                         else
                         {
-                            lineTask = DelayedMsg(LogBox, 10, null);
+                            lineTask = DelayedMsg(this, 10, null);
                         }
                         delayedMessages--;
                         break;
@@ -174,12 +175,17 @@ namespace Demo.FakeConsoleApp
                         #endregion
                 }
                 await Task.WhenAll(lineTask, timeTask);
-                if (closeApp)
+                if (closeApp && !closing)
                 {
-                    //wait on delayed messages
-                    updateTime = false;
-                    await Task.WhenAll();
+                    closing = true;
+                    await Task.Run(() =>
+                    {
+                        while (delayedMessages > 0) { /*wait on delayed messages*/ }
+                    });
+                    AppendLine(LogBox, "(The app will now close in about 10 seconds)");
                     await Task.Run(() => Thread.Sleep(10 * 1000));
+                    updateTime = false;
+                    await Task.Run(() => Thread.Sleep(100));
                     Application.Exit();
                 }
             }
@@ -200,12 +206,14 @@ namespace Demo.FakeConsoleApp
             });
         }
 
-        private static Task DelayedMsg(TextBox textBox, int seconds, string msg)
+        private static Task DelayedMsg(ConsoleFakerForm ctx, int seconds, string msg)
         {
             return Task.Run(() =>
             {
+                ctx.delayedMessages++;
                 Thread.Sleep(seconds * 1000);
-                AppendLine(textBox, $"This message was requested {seconds} seconds ago{(string.IsNullOrEmpty(msg) ? "" : $": {msg}")}");
+                AppendLine(ctx.LogBox, $"This message was requested {seconds} seconds ago{(string.IsNullOrEmpty(msg) ? "" : $": {msg}")}");
+                ctx.delayedMessages--;
             });
         }
     }
