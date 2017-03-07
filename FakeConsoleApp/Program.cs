@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Demo.FakeConsoleApp
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -15,5 +15,8 @@ namespace Demo.FakeConsoleApp
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ConsoleFakerForm());
         }
+
+        //to be able to run it from another project
+        public static string ReturnPath() => Environment.CurrentDirectory;
     }
 }

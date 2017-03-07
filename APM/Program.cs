@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 //Asynchronous Programming Model
 namespace APM
 {
-    class Program
+    public class Program
     {
         private delegate int GetCountEvenNumbersHandler(int min, int max);
         private static GetCountEvenNumbersHandler getCountEvenNumbersCaller;
@@ -68,5 +68,8 @@ namespace APM
             //represented by the IAsyncResult passed
             return getCountOddNumbersCaller.EndInvoke(result);
         }
+
+        //to be able to run it from another project
+        public string ReturnPath() => Environment.CurrentDirectory;
     }
 }
