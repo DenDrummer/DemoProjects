@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APM", "APM\APM.csproj", "{E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EAP", "EAP\EAP.csproj", "{4EBBBB2F-5FEF-4798-885D-83CBF0726296}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelCode", "Parallel\ParallelCode.csproj", "{F86ABEC3-4728-49AC-A8C5-B55D2A158EA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4EBBBB2F-5FEF-4798-885D-83CBF0726296}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EBBBB2F-5FEF-4798-885D-83CBF0726296}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EBBBB2F-5FEF-4798-885D-83CBF0726296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F86ABEC3-4728-49AC-A8C5-B55D2A158EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F86ABEC3-4728-49AC-A8C5-B55D2A158EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F86ABEC3-4728-49AC-A8C5-B55D2A158EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F86ABEC3-4728-49AC-A8C5-B55D2A158EA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
