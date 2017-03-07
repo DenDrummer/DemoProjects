@@ -9,8 +9,8 @@ namespace Locks
 {
     class Program
     {
-        private static object _lock = new object();
-        private static object _lock2 = new object();
+        private static Object _lock = new Object();
+        private static Object _lock2 = new Object();
         static void Main(string[] args)
         {
             MenuAction();
