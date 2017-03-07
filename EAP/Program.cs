@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 //Event-based Asynchronous Pattern
 //not recommended 
 //can be implemented in different ways but depends on the following

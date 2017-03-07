@@ -7,7 +7,7 @@ namespace ParallelCode
 {
     public class ParallelMain
     {
-        private static Object _lock = new Object();
+        private static object _lock = new object();
         private static int Timed_Message(string message, int interval)
         {          
             //Parallel for loop
@@ -30,15 +30,15 @@ namespace ParallelCode
             Console.Write("Give first interval: ");
             string interval1 = Console.ReadLine();
             int interval1_int;
-            Int32.TryParse(interval1, out interval1_int);
+            int.TryParse(interval1, out interval1_int);
             Console.Write("Give second interval: ");
             string interval2 = Console.ReadLine();
             int interval2_int;
-            Int32.TryParse(interval2, out interval2_int);
+            int.TryParse(interval2, out interval2_int);
             Console.Write("Give third interval: ");
             string interval3 = Console.ReadLine();
             int interval3_int;
-            Int32.TryParse(interval3, out interval3_int);
+            int.TryParse(interval3, out interval3_int);
             int[] intervals = { interval1_int, interval2_int, interval3_int };
             Task task = new Task(() => code = Timed_Message("Eten", interval1_int));
             task.Start();
@@ -55,7 +55,7 @@ namespace ParallelCode
             Console.WriteLine("The total lenght of the messages was {0} seconds.", totalIntervals);
             //PLINQ
             int output = 0;
-            output = intervals.AsParallel().Aggregate<int, int>(
+            output = intervals.AsParallel().Aggregate(
                 0, (sub, value) => sub + (value * 10));
             Console.WriteLine("Or done with PLINQ {0} seconds.", output);
             Console.ReadLine();

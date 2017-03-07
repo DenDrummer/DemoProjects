@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Demo.AsyncForms1
 {
-    public static class Program
+    public class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -17,6 +17,6 @@ namespace Demo.AsyncForms1
         }
 
         //to be able to run it from another project
-        public static string ReturnPath() => Environment.CurrentDirectory;
+        public string ReturnPath() => Environment.CurrentDirectory;
     }
 }

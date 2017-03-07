@@ -100,6 +100,10 @@
       <Project>{5f2446ea-54ac-41dc-afff-dc031073af12}</Project>
       <Name>FakeConsoleApp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Locks\Locks.csproj">
+      <Project>{b06130a1-9c68-4854-8513-fcd5600babf8}</Project>
+      <Name>Locks</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Parallel\ParallelCode.csproj">
       <Project>{f86abec3-4728-49ac-a8c5-b55d2a158ea5}</Project>
       <Name>ParallelCode</Name>
