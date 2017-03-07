@@ -23,7 +23,7 @@ namespace Demo.FakeConsoleApp
 
         private async void Program()
         {
-            await AppendLine(LogBox, "Welcome");
+            await AppendLine(LogBox, "Welcome ( ° v°)b");
             await AppendLine(LogBox, "Type \"commands\" for a list of commands");
         }
 
