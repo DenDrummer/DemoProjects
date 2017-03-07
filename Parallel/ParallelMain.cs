@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace ParallelCode
 {
-    class ParallelMain
+    public class ParallelMain
     {
         private static int Timed_Message(string message, int interval)
         {          
@@ -58,5 +56,8 @@ namespace ParallelCode
             Console.WriteLine("Or done with PLINQ {0} seconds.", output);
             Console.ReadLine();
         }
+
+        //to be able to run it from another project
+        public string ReturnPath() => Environment.CurrentDirectory;
     }
 }
