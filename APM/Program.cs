@@ -1,8 +1,5 @@
-﻿ using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 //Not recommend anymore => outdated but very simple + practical
 //Asynchronous Programming Model
@@ -17,14 +14,14 @@ namespace APM
 
         static void Main(string[] args)
         {
-            Console.WriteLine("There are " + EndCountEvenNumbers(BeginCountEvenNumbers(1, 10, null, null)) + " even numbers between 1 and 10.");
-            Console.WriteLine("There are " + EndCountOddNumbers(BeginCountOddNumbers(1,10,null,null)) + " odd numbers between 1 and 10.");
+            Console.WriteLine($"There are {EndCountEvenNumbers(BeginCountEvenNumbers(1, 10, null, null))} even numbers between 1 and 10.");
+            Console.WriteLine($"There are {EndCountOddNumbers(BeginCountOddNumbers(1, 10, null, null))} odd numbers between 1 and 10.");
             Console.ReadLine();
         }
 
         public static int CountEvenNumbers(int min, int max)
         {
-           
+
             //Provides a set of methods for querying that implements
             //ParallelQuery(TSource)
             return ParallelEnumerable.Range(min, max).Count(n => n % 2 == 0);

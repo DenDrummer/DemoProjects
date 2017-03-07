@@ -1,11 +1,16 @@
-﻿namespace MainMenuFormsApp
+﻿using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace MainMenuFormsApp
 {
     partial class MainMenuForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,159 +33,151 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.APMButton = new System.Windows.Forms.Button();
-            this.AsyncForms1Button = new System.Windows.Forms.Button();
-            this.AsyncFruitCountingButton = new System.Windows.Forms.Button();
-            this.EAPButton = new System.Windows.Forms.Button();
-            this.FakeConsoleAppButton = new System.Windows.Forms.Button();
-            this.LocksButton = new System.Windows.Forms.Button();
-            this.ParallelCodeButton = new System.Windows.Forms.Button();
-            this.QuitButton = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            APMButton = new Button();
+            AsyncForms1Button = new Button();
+            AsyncFruitCountingButton = new Button();
+            EAPButton = new Button();
+            FakeConsoleAppButton = new Button();
+            LocksButton = new Button();
+            ParallelCodeButton = new Button();
+            QuitButton = new Button();
+            SuspendLayout();
             // 
             // APMButton
             // 
-            this.APMButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.APMButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.APMButton.Location = new System.Drawing.Point(12, 12);
-            this.APMButton.Name = "APMButton";
-            this.APMButton.Size = new System.Drawing.Size(178, 32);
-            this.APMButton.TabIndex = 0;
-            this.APMButton.Text = "&1 - APM";
-            this.APMButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.APMButton.UseVisualStyleBackColor = true;
-            this.APMButton.Click += new System.EventHandler(this.APMButton_Click);
+            APMButton.Anchor = ((((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right)));
+            APMButton.Cursor = Cursors.Hand;
+            APMButton.Location = new Point(12, 12);
+            APMButton.Name = "APMButton";
+            APMButton.Size = new Size(178, 32);
+            APMButton.TabIndex = 0;
+            APMButton.Text = "&1 - APM";
+            APMButton.TextAlign = ContentAlignment.MiddleLeft;
+            APMButton.UseVisualStyleBackColor = true;
+            APMButton.Click += new EventHandler(APMButton_Click);
             // 
             // AsyncForms1Button
             // 
-            this.AsyncForms1Button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AsyncForms1Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AsyncForms1Button.Location = new System.Drawing.Point(12, 50);
-            this.AsyncForms1Button.Name = "AsyncForms1Button";
-            this.AsyncForms1Button.Size = new System.Drawing.Size(178, 32);
-            this.AsyncForms1Button.TabIndex = 0;
-            this.AsyncForms1Button.Text = "&2 - AsyncForms1";
-            this.AsyncForms1Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AsyncForms1Button.UseVisualStyleBackColor = true;
-            this.AsyncForms1Button.Click += new System.EventHandler(this.AsyncForms1Button_Click);
+            AsyncForms1Button.Anchor = ((((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right)));
+            AsyncForms1Button.Cursor = Cursors.Hand;
+            AsyncForms1Button.Location = new Point(12, 50);
+            AsyncForms1Button.Name = "AsyncForms1Button";
+            AsyncForms1Button.Size = new Size(178, 32);
+            AsyncForms1Button.TabIndex = 1;
+            AsyncForms1Button.Text = "&2 - AsyncForms1";
+            AsyncForms1Button.TextAlign = ContentAlignment.MiddleLeft;
+            AsyncForms1Button.UseVisualStyleBackColor = true;
+            AsyncForms1Button.Click += new EventHandler(AsyncForms1Button_Click);
             // 
             // AsyncFruitCountingButton
             // 
-            this.AsyncFruitCountingButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AsyncFruitCountingButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AsyncFruitCountingButton.Location = new System.Drawing.Point(12, 88);
-            this.AsyncFruitCountingButton.Name = "AsyncFruitCountingButton";
-            this.AsyncFruitCountingButton.Size = new System.Drawing.Size(178, 32);
-            this.AsyncFruitCountingButton.TabIndex = 0;
-            this.AsyncFruitCountingButton.Text = "&3 - AsyncFruitCounting";
-            this.AsyncFruitCountingButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AsyncFruitCountingButton.UseVisualStyleBackColor = true;
-            this.AsyncFruitCountingButton.Click += new System.EventHandler(this.AsyncFruitCountingButton_Click);
+            AsyncFruitCountingButton.Anchor = ((((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right)));
+            AsyncFruitCountingButton.Cursor = Cursors.Hand;
+            AsyncFruitCountingButton.Location = new Point(12, 88);
+            AsyncFruitCountingButton.Name = "AsyncFruitCountingButton";
+            AsyncFruitCountingButton.Size = new Size(178, 32);
+            AsyncFruitCountingButton.TabIndex = 2;
+            AsyncFruitCountingButton.Text = "&3 - AsyncFruitCounting";
+            AsyncFruitCountingButton.TextAlign = ContentAlignment.MiddleLeft;
+            AsyncFruitCountingButton.UseVisualStyleBackColor = true;
+            AsyncFruitCountingButton.Click += new EventHandler(AsyncFruitCountingButton_Click);
             // 
             // EAPButton
             // 
-            this.EAPButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.EAPButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.EAPButton.Location = new System.Drawing.Point(12, 126);
-            this.EAPButton.Name = "EAPButton";
-            this.EAPButton.Size = new System.Drawing.Size(178, 32);
-            this.EAPButton.TabIndex = 0;
-            this.EAPButton.Text = "&4 - EAP";
-            this.EAPButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EAPButton.UseVisualStyleBackColor = true;
-            this.EAPButton.Click += new System.EventHandler(this.EAPButton_Click);
+            EAPButton.Anchor = ((((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right)));
+            EAPButton.Cursor = Cursors.Hand;
+            EAPButton.Location = new Point(12, 126);
+            EAPButton.Name = "EAPButton";
+            EAPButton.Size = new Size(178, 32);
+            EAPButton.TabIndex = 3;
+            EAPButton.Text = "&4 - EAP";
+            EAPButton.TextAlign = ContentAlignment.MiddleLeft;
+            EAPButton.UseVisualStyleBackColor = true;
+            EAPButton.Click += new EventHandler(EAPButton_Click);
             // 
             // FakeConsoleAppButton
             // 
-            this.FakeConsoleAppButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FakeConsoleAppButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FakeConsoleAppButton.Location = new System.Drawing.Point(12, 164);
-            this.FakeConsoleAppButton.Name = "FakeConsoleAppButton";
-            this.FakeConsoleAppButton.Size = new System.Drawing.Size(178, 32);
-            this.FakeConsoleAppButton.TabIndex = 0;
-            this.FakeConsoleAppButton.Text = "&5 - FakeConsoleApp";
-            this.FakeConsoleAppButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.FakeConsoleAppButton.UseVisualStyleBackColor = true;
-            this.FakeConsoleAppButton.Click += new System.EventHandler(this.FakeConsoleAppButton_Click);
+            FakeConsoleAppButton.Anchor = ((((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right)));
+            FakeConsoleAppButton.Cursor = Cursors.Hand;
+            FakeConsoleAppButton.Location = new Point(12, 164);
+            FakeConsoleAppButton.Name = "FakeConsoleAppButton";
+            FakeConsoleAppButton.Size = new Size(178, 32);
+            FakeConsoleAppButton.TabIndex = 4;
+            FakeConsoleAppButton.Text = "&5 - FakeConsoleApp";
+            FakeConsoleAppButton.TextAlign = ContentAlignment.MiddleLeft;
+            FakeConsoleAppButton.UseVisualStyleBackColor = true;
+            FakeConsoleAppButton.Click += new EventHandler(FakeConsoleAppButton_Click);
             // 
             // LocksButton
             // 
-            this.LocksButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LocksButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LocksButton.Location = new System.Drawing.Point(12, 202);
-            this.LocksButton.Name = "LocksButton";
-            this.LocksButton.Size = new System.Drawing.Size(178, 32);
-            this.LocksButton.TabIndex = 0;
-            this.LocksButton.Text = "&6 - Locks";
-            this.LocksButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LocksButton.UseVisualStyleBackColor = true;
-            this.LocksButton.Click += new System.EventHandler(this.LocksButton_Click);
+            LocksButton.Anchor = ((((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right)));
+            LocksButton.Cursor = Cursors.Hand;
+            LocksButton.Location = new Point(12, 202);
+            LocksButton.Name = "LocksButton";
+            LocksButton.Size = new Size(178, 32);
+            LocksButton.TabIndex = 5;
+            LocksButton.Text = "&6 - Locks";
+            LocksButton.TextAlign = ContentAlignment.MiddleLeft;
+            LocksButton.UseVisualStyleBackColor = true;
+            LocksButton.Click += new EventHandler(LocksButton_Click);
             // 
             // ParallelCodeButton
             // 
-            this.ParallelCodeButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ParallelCodeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ParallelCodeButton.Location = new System.Drawing.Point(12, 240);
-            this.ParallelCodeButton.Name = "ParallelCodeButton";
-            this.ParallelCodeButton.Size = new System.Drawing.Size(178, 32);
-            this.ParallelCodeButton.TabIndex = 0;
-            this.ParallelCodeButton.Text = "&7 - ParallelCode";
-            this.ParallelCodeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ParallelCodeButton.UseVisualStyleBackColor = true;
-            this.ParallelCodeButton.Click += new System.EventHandler(this.ParallelCodeButton_Click);
+            ParallelCodeButton.Anchor = ((((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right)));
+            ParallelCodeButton.Cursor = Cursors.Hand;
+            ParallelCodeButton.Location = new Point(12, 240);
+            ParallelCodeButton.Name = "ParallelCodeButton";
+            ParallelCodeButton.Size = new Size(178, 32);
+            ParallelCodeButton.TabIndex = 6;
+            ParallelCodeButton.Text = "&7 - ParallelCode";
+            ParallelCodeButton.TextAlign = ContentAlignment.MiddleLeft;
+            ParallelCodeButton.UseVisualStyleBackColor = true;
+            ParallelCodeButton.Click += new EventHandler(ParallelCodeButton_Click);
             // 
             // QuitButton
             // 
-            this.QuitButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.QuitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.QuitButton.Location = new System.Drawing.Point(12, 287);
-            this.QuitButton.Name = "QuitButton";
-            this.QuitButton.Size = new System.Drawing.Size(178, 32);
-            this.QuitButton.TabIndex = 0;
-            this.QuitButton.Text = "&Quit";
-            this.QuitButton.UseVisualStyleBackColor = true;
-            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
+            QuitButton.Anchor = ((((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right)));
+            QuitButton.Cursor = Cursors.Hand;
+            QuitButton.Location = new Point(12, 287);
+            QuitButton.Name = "QuitButton";
+            QuitButton.Size = new Size(178, 32);
+            QuitButton.TabIndex = 7;
+            QuitButton.Text = "&Quit";
+            QuitButton.UseVisualStyleBackColor = true;
+            QuitButton.Click += new EventHandler(QuitButton_Click);
             // 
             // MainMenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(202, 331);
-            this.ControlBox = false;
-            this.Controls.Add(this.AsyncForms1Button);
-            this.Controls.Add(this.AsyncFruitCountingButton);
-            this.Controls.Add(this.QuitButton);
-            this.Controls.Add(this.ParallelCodeButton);
-            this.Controls.Add(this.LocksButton);
-            this.Controls.Add(this.EAPButton);
-            this.Controls.Add(this.FakeConsoleAppButton);
-            this.Controls.Add(this.APMButton);
-            this.MinimumSize = new System.Drawing.Size(220, 380);
-            this.Name = "MainMenuForm";
-            this.ShowIcon = false;
-            this.Text = "Main Menu";
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(202, 331);
+            ControlBox = false;
+            Controls.Add(AsyncForms1Button);
+            Controls.Add(AsyncFruitCountingButton);
+            Controls.Add(QuitButton);
+            Controls.Add(ParallelCodeButton);
+            Controls.Add(LocksButton);
+            Controls.Add(EAPButton);
+            Controls.Add(FakeConsoleAppButton);
+            Controls.Add(APMButton);
+            MinimumSize = new Size(220, 380);
+            Name = "MainMenuForm";
+            ShowIcon = false;
+            Text = "Main Menu";
+            ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button APMButton;
-        private System.Windows.Forms.Button AsyncForms1Button;
-        private System.Windows.Forms.Button AsyncFruitCountingButton;
-        private System.Windows.Forms.Button EAPButton;
-        private System.Windows.Forms.Button FakeConsoleAppButton;
-        private System.Windows.Forms.Button LocksButton;
-        private System.Windows.Forms.Button ParallelCodeButton;
-        private System.Windows.Forms.Button QuitButton;
+        private Button APMButton;
+        private Button AsyncForms1Button;
+        private Button AsyncFruitCountingButton;
+        private Button EAPButton;
+        private Button FakeConsoleAppButton;
+        private Button LocksButton;
+        private Button ParallelCodeButton;
+        private Button QuitButton;
     }
 }
 

@@ -17,7 +17,7 @@ namespace Demo.AsyncForms1
         {
             //while(this != null)
             //{
-                TimeLabel.Text = DateTime.Now.ToString();
+            TimeLabel.Text = DateTime.Now.ToString();
             //}
         }
 

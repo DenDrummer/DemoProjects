@@ -9,18 +9,18 @@ namespace ParallelCode
     {
         private static object _lock = new object();
         private static int Timed_Message(string message, int interval)
-        {          
+        {
             //Parallel for loop
             Parallel.For(0, 10, (i) =>
             {
                 lock (_lock)
                 {
-                    Console.WriteLine("Message: {0} - Cyclus {1} has an interval of {2} seconds.", message, i, interval);
+                    Console.WriteLine($"Message: {message} - Cyclus {i} has an interval of {interval} seconds.");
                     Thread.Sleep(1000 * interval);
 
                 }
             });
-            Console.WriteLine("{0} - Complete", message);
+            Console.WriteLine($"{message} - Complete");
             return 0;
         }
 
@@ -52,12 +52,12 @@ namespace ParallelCode
             int totalIntervals = 0;
             //Parallel foreach
             Parallel.ForEach(intervals, value => { lock (_lock) { totalIntervals += value * 10; } });
-            Console.WriteLine("The total lenght of the messages was {0} seconds.", totalIntervals);
+            Console.WriteLine($"The total lenght of the messages was {totalIntervals} seconds.");
             //PLINQ
             int output = 0;
             output = intervals.AsParallel().Aggregate(
                 0, (sub, value) => sub + (value * 10));
-            Console.WriteLine("Or done with PLINQ {0} seconds.", output);
+            Console.WriteLine($"Or done with PLINQ {output} seconds.");
             Console.ReadLine();
         }
 

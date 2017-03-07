@@ -51,7 +51,7 @@ namespace EAP
         public Program()
         {
             Console.WriteLine("Welcome to the most fantastic thing on earth!");
-            Console.WriteLine("Well if you don't count C#, sleeping, woman, World of Warcraft, Seppe De Meester, pizza, Monster and Life is Strange as the most fantastic things on earth.");
+            Console.WriteLine("Well if you don't count C#, sleeping, woman, games, Seppe De Meester, pizza, Monster and Life is Strange as the most fantastic things on earth.");
             onCompletedDelegate_Even = new SendOrPostCallback(CompletedDelegateFunc_Even);
             onCompetedDelegate_Odd = new SendOrPostCallback(CompletedDelegateFunc_Odd);
         }
@@ -82,7 +82,7 @@ namespace EAP
                 Thread.Sleep(3000);
                 if (i % 2 == 0)
                 {
-                    Console.Write("{0} is even!\n", i);
+                    Console.Write($"{i} is even!\n");
                 }
             }
 
@@ -123,7 +123,7 @@ namespace EAP
                 Thread.Sleep(3000);
                 if (i % 2 == 0)
                 {
-                    Console.Write("{0} is even!\n", i);
+                    Console.Write($"{i} is even!\n");
                 }
             }
 
@@ -150,7 +150,7 @@ namespace EAP
                 Thread.Sleep(3000);
                 if (i % 2 != 0)
                 {
-                    Console.Write("{0} is odd!\n", i);
+                    Console.Write($"{i} is odd!\n");
                 }
             }
 
@@ -183,7 +183,7 @@ namespace EAP
                 Thread.Sleep(3000);
                 if (i % 2 != 0)
                 {
-                    Console.Write("{0} is odd!\n", i);
+                    Console.Write($"{i} is odd!\n");
                 }
             }
 

@@ -79,7 +79,6 @@ namespace Demo.FakeConsoleApp
                     #endregion
                     #region delayed <int time> <string msg>
                     case "delayed":
-                        delayedMessages++;
                         int seconds;
                         if (inputString.Split(' ').Length > 1)
                         {
@@ -106,7 +105,6 @@ namespace Demo.FakeConsoleApp
                         {
                             lineTask = DelayedMsg(this, 10, null);
                         }
-                        delayedMessages--;
                         break;
                     #endregion
                     #region quit
@@ -119,26 +117,7 @@ namespace Demo.FakeConsoleApp
                     #endregion
                     #region rickroll
                     case "rickroll":
-                        lineTask = Task.Run(async () =>
-                        {
-                            await AppendLine(LogBox, "Never gonna give you up!");
-                            Thread.Sleep(1000);
-                            await AppendLine(LogBox, "Never gonna let you down!");
-                            Thread.Sleep(1000);
-                            await AppendLine(LogBox, "Never gonna run around");
-                            Thread.Sleep(1000);
-                            await AppendLine(LogBox, "and desert you!");
-                            Thread.Sleep(1000);
-                            await AppendLine(LogBox, "Never gonna make you cry!");
-                            Thread.Sleep(1000);
-                            await AppendLine(LogBox, "Never gonna say goodbye!");
-                            Thread.Sleep(1000);
-                            await AppendLine(LogBox, "Never gonna tell a lie");
-                            Thread.Sleep(1000);
-                            await AppendLine(LogBox, "and hurt you!");
-                            Thread.Sleep(1000);
-                            Process.Start(new ProcessStartInfo("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
-                        });
+                        lineTask = RickRoll();
                         break;
                     #endregion
                     #region start
@@ -180,8 +159,9 @@ namespace Demo.FakeConsoleApp
                     closing = true;
                     await Task.Run(() =>
                     {
-                        while (delayedMessages > 0) { /*wait on delayed messages*/ }
+                        while (delayedMessages > 0) { /*wait until there are no delayed messages left*/ }
                     });
+                    //doesn't make much of a difference wether it's awaited or not
                     AppendLine(LogBox, "(The app will now close in about 10 seconds)");
                     await Task.Run(() => Thread.Sleep(10 * 1000));
                     updateTime = false;
@@ -189,6 +169,31 @@ namespace Demo.FakeConsoleApp
                     Application.Exit();
                 }
             }
+        }
+
+        private Task RickRoll()
+        {
+            //this has to be async so it doesn't run in the same thread
+            return Task.Run(async () =>
+            {
+                await AppendLine(LogBox, "Never gonna give you up!");
+                Thread.Sleep(1000);
+                await AppendLine(LogBox, "Never gonna let you down!");
+                Thread.Sleep(1000);
+                await AppendLine(LogBox, "Never gonna run around");
+                Thread.Sleep(1000);
+                await AppendLine(LogBox, "and desert you!");
+                Thread.Sleep(1000);
+                await AppendLine(LogBox, "Never gonna make you cry!");
+                Thread.Sleep(1000);
+                await AppendLine(LogBox, "Never gonna say goodbye!");
+                Thread.Sleep(1000);
+                await AppendLine(LogBox, "Never gonna tell a lie");
+                Thread.Sleep(1000);
+                await AppendLine(LogBox, "and hurt you!");
+                Thread.Sleep(1000);
+                Process.Start(new ProcessStartInfo("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+            });
         }
 
         private static Task AppendLine(TextBox textBox, string text)
