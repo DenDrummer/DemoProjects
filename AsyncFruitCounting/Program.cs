@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Demo.AsyncFruitCounting
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -52,5 +52,8 @@ namespace Demo.AsyncFruitCounting
                 Console.WriteLine($"All apples have been counted. You have {appleCount} apple{(appleCount == 1 ? "" : "s")}");
             });
         }
+
+        //to be able to run it from another project
+        public string ReturnPath() => Environment.CurrentDirectory;
     }
 }

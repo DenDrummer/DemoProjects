@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 //raise an event once the execution has come to an end
 namespace EAP
 {
-    class Program
+    public class Program
     {
         //delegate will execute main method asynchronously
         private delegate void GetWorkerEvenNumbersHandler(int min, int max, AsyncOperation ayncOp);
@@ -202,5 +202,8 @@ namespace EAP
             asyncOp.PostOperationCompleted(onCompetedDelegate_Odd, arg);
         }
         #endregion
+
+        //to be able to run it from another project
+        public string ReturnPath() => Environment.CurrentDirectory;
     }
 }

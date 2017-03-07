@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Locks
 {
-    class Program
+    public class Program
     {
         private static Object _lock = new Object();
         private static Object _lock2 = new Object();
@@ -29,26 +25,11 @@ namespace Locks
                 Console.Write("Choice => ");
                 string choice = Console.ReadLine();
                 int choice_int;
-                if (Int32.TryParse(choice, out choice_int))
+                if (int.TryParse(choice, out choice_int))
                 {
                     switch (choice_int)
                     {
-                        case 1:
-                            Console.Write("Give balance: ");
-                            string balance = Console.ReadLine();
-                            int balance_int;
-                            Console.Write("Give amount: ");
-                            string amount = Console.ReadLine();
-                            int amount_int;
-                            if(Int32.TryParse(balance, out balance_int) && Int32.TryParse(amount, out amount_int))
-                            {
-                                LockSomething(amount_int, balance_int);
-                            }else
-                            {
-                                Console.WriteLine("A number isn't to hard to give, right?");
-                            }
-                            
-                            break;
+                        case 1: Lock();break;
                         case 2: DeadLock(); break;
                         case 0: Console.WriteLine("Bye!"); done = true; break;
                         default: Console.WriteLine("You shouldn't be here!"); break;
@@ -57,6 +38,24 @@ namespace Locks
                 {
                     Console.WriteLine("Please type a number!");
                 }
+            }
+        }
+
+        private static void Lock()
+        {
+            Console.Write("Give balance: ");
+            string balance = Console.ReadLine();
+            int balance_int;
+            Console.Write("Give amount: ");
+            string amount = Console.ReadLine();
+            int amount_int;
+            if (int.TryParse(balance, out balance_int) && int.TryParse(amount, out amount_int))
+            {
+                LockSomething(amount_int, balance_int);
+            }
+            else
+            {
+                Console.WriteLine("A number isn't to hard to give, right?");
             }
         }
 
@@ -112,5 +111,8 @@ namespace Locks
                 }
             }
         }
+
+        //to be able to run it from another project
+        public string ReturnPath() => Environment.CurrentDirectory;
     }
 }
