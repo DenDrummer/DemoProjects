@@ -30,6 +30,8 @@ namespace Demo.FakeConsoleApp
         private async void Program()
         {
             await AppendLine(LogBox, "Welcome ( ° v°)b");
+            await AppendLine(LogBox, "This project has been built with TAP");
+            await AppendLine(LogBox, "(Task-based Asynchronous Pattern)");
             await AppendLine(LogBox, "Type \"commands\" for a list of commands");
         }
 
@@ -163,6 +165,10 @@ namespace Demo.FakeConsoleApp
                 if (closeApp && !closing)
                 {
                     closing = true;
+                    if (delayedMessages > 0)
+                    {
+                        AppendLine(LogBox, "Waiting on delayed messages...");
+                    }
                     await Task.Run(() =>
                     {
                         while (delayedMessages > 0) { /*wait until there are no delayed messages left*/ }
