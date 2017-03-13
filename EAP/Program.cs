@@ -40,10 +40,17 @@ namespace EAP
             string maxInput = Console.ReadLine();
             int min;
             int max;
-            int.TryParse(minInput, out min);
-            int.TryParse(maxInput, out max);
-            GetEvenNumbersAsync(min, max, 5);
-            GetOddNumbersAsync(min, max, 6);
+            if(int.TryParse(minInput, out min) && int.TryParse(maxInput, out max))
+            {
+                GetEvenNumbersAsync(min, max, 5);
+                GetOddNumbersAsync(min, max, 6);
+            }else
+            {
+                Console.WriteLine("Please give a number for both inputs instead of this nonsense: min: {0} max: {1}", minInput, maxInput);
+                Console.WriteLine("Press [ENTER] to return to main menu");
+                Console.ReadLine();
+                return;
+            } 
             Console.ReadLine();
 
         }
