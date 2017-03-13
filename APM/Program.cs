@@ -7,6 +7,10 @@ namespace APM
 {
     public class Program
     {
+        //Delegate references to methods wwith a particualr parameter list and return type
+        //You can associate its instance with any method with a compatible signature and return type
+        //invoke/call the method through the delegate
+        //We need it here because it represents the addres of the function to be called
         private delegate int GetCountEvenNumbersHandler(int min, int max);
         private static GetCountEvenNumbersHandler getCountEvenNumbersCaller;
         private delegate int GetCountOddNumbersHandler(int min, int max);
