@@ -57,7 +57,7 @@ namespace ParallelCode
             int output = 0;
             output = intervals.AsParallel().Aggregate(
                 0, (sub, value) => sub + (value * 10));
-            Console.WriteLine($"Or done with PLINQ {output} seconds.");
+            Console.WriteLine($"Or calculation done with PLINQ {output} seconds.");
             Console.ReadLine();
         }
 
