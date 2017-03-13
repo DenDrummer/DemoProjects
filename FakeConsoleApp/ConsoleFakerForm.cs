@@ -18,7 +18,13 @@ namespace Demo.FakeConsoleApp
         public ConsoleFakerForm()
         {
             InitializeComponent();
+            SetListeners();
             Program();
+        }
+
+        private void SetListeners()
+        {
+            SendMsgTextBox.KeyUp += new KeyEventHandler(TextBoxKeyUp);
         }
 
         private async void Program()

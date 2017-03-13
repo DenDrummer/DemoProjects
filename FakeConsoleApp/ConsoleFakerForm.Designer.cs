@@ -33,73 +33,76 @@ namespace Demo.FakeConsoleApp
         /// </summary>
         private void InitializeComponent()
         {
-            TimeLabel = new Label();
-            SendMsgButton = new Button();
-            SendMsgTextBox = new TextBox();
-            LogBox = new TextBox();
-            SuspendLayout();
+            this.TimeLabel = new System.Windows.Forms.Label();
+            this.SendMsgButton = new System.Windows.Forms.Button();
+            this.SendMsgTextBox = new System.Windows.Forms.TextBox();
+            this.LogBox = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
             // 
             // TimeLabel
             // 
-            TimeLabel.Anchor = (AnchorStyles.Top | AnchorStyles.Right);
-            TimeLabel.Location = new Point(221, 9);
-            TimeLabel.Name = "TimeLabel";
-            TimeLabel.Size = new Size(149, 17);
-            TimeLabel.TabIndex = 2;
-            TimeLabel.Text = "20/02/2017 10:12:0";
+            this.TimeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TimeLabel.Location = new System.Drawing.Point(221, 9);
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(149, 17);
+            this.TimeLabel.TabIndex = 2;
+            this.TimeLabel.Text = "20/02/2017 10:12:0";
             // 
             // SendMsgButton
             // 
-            SendMsgButton.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
-            SendMsgButton.Cursor = Cursors.Hand;
-            SendMsgButton.Location = new Point(295, 167);
-            SendMsgButton.Name = "SendMsgButton";
-            SendMsgButton.Size = new Size(75, 22);
-            SendMsgButton.TabIndex = 1;
-            SendMsgButton.Text = "Send";
-            SendMsgButton.UseVisualStyleBackColor = true;
-            SendMsgButton.Click += new EventHandler(SendMsgButton_Click);
+            this.SendMsgButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SendMsgButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SendMsgButton.Location = new System.Drawing.Point(295, 162);
+            this.SendMsgButton.Name = "SendMsgButton";
+            this.SendMsgButton.Size = new System.Drawing.Size(75, 27);
+            this.SendMsgButton.TabIndex = 1;
+            this.SendMsgButton.Text = "Send";
+            this.SendMsgButton.UseVisualStyleBackColor = true;
+            this.SendMsgButton.Click += new System.EventHandler(this.SendMsgButton_Click);
             // 
             // SendMsgTextBox
             // 
-            SendMsgTextBox.Anchor = ((AnchorStyles.Bottom | AnchorStyles.Left) | AnchorStyles.Right);
-            SendMsgTextBox.Location = new Point(12, 167);
-            SendMsgTextBox.Name = "SendMsgTextBox";
-            SendMsgTextBox.Size = new Size(277, 22);
-            SendMsgTextBox.TabIndex = 0;
+            this.SendMsgTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SendMsgTextBox.Location = new System.Drawing.Point(12, 164);
+            this.SendMsgTextBox.Name = "SendMsgTextBox";
+            this.SendMsgTextBox.Size = new System.Drawing.Size(277, 22);
+            this.SendMsgTextBox.TabIndex = 0;
             // 
             // LogBox
             // 
-            LogBox.AcceptsReturn = true;
-            LogBox.AcceptsTab = true;
-            LogBox.Anchor = (((AnchorStyles.Top | AnchorStyles.Bottom) | AnchorStyles.Left) | AnchorStyles.Right);
-            LogBox.BorderStyle = BorderStyle.None;
-            LogBox.Cursor = Cursors.Default;
-            LogBox.Location = new Point(12, 29);
-            LogBox.Multiline = true;
-            LogBox.Name = "LogBox";
-            LogBox.ReadOnly = true;
-            LogBox.ScrollBars = ScrollBars.Vertical;
-            LogBox.Size = new Size(358, 132);
-            LogBox.TabIndex = 0;
-            LogBox.TabStop = false;
+            this.LogBox.AcceptsReturn = true;
+            this.LogBox.AcceptsTab = true;
+            this.LogBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LogBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LogBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LogBox.Location = new System.Drawing.Point(12, 29);
+            this.LogBox.Multiline = true;
+            this.LogBox.Name = "LogBox";
+            this.LogBox.ReadOnly = true;
+            this.LogBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.LogBox.Size = new System.Drawing.Size(358, 127);
+            this.LogBox.TabIndex = 0;
+            this.LogBox.TabStop = false;
             // 
             // ConsoleFakerForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 16F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(382, 201);
-            ControlBox = false;
-            Controls.Add(LogBox);
-            Controls.Add(SendMsgTextBox);
-            Controls.Add(SendMsgButton);
-            Controls.Add(TimeLabel);
-            MinimumSize = new Size(400, 250);
-            Name = "ConsoleFakerForm";
-            Text = "Console Faker";
-            Load += new EventHandler(ConsoleFakerForm_Load);
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(382, 201);
+            this.ControlBox = false;
+            this.Controls.Add(this.LogBox);
+            this.Controls.Add(this.SendMsgTextBox);
+            this.Controls.Add(this.SendMsgButton);
+            this.Controls.Add(this.TimeLabel);
+            this.MinimumSize = new System.Drawing.Size(400, 250);
+            this.Name = "ConsoleFakerForm";
+            this.Text = "Console Faker";
+            this.Load += new System.EventHandler(this.ConsoleFakerForm_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
