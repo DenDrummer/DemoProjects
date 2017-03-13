@@ -10,7 +10,7 @@ namespace Demo.FakeConsoleApp
     public partial class ConsoleFakerForm : Form
     {
         private bool updateTime = false;
-        private int delayedMessages = 0;
+        private int backgroundTasks = 0;
         private bool closeApp = false;
         private bool closing = false;
         private string inputString = null;
@@ -72,6 +72,8 @@ namespace Demo.FakeConsoleApp
                         {
                             await AppendLine(LogBox, "• commands");
                             Thread.Sleep(500);
+                            await AppendLine(LogBox, "• countfruit");
+                            Thread.Sleep(500);
                             await AppendLine(LogBox, "• delayed [delay in seconds] [message]");
                             Thread.Sleep(500);
                             await AppendLine(LogBox, "• quit");
@@ -83,6 +85,11 @@ namespace Demo.FakeConsoleApp
                             await AppendLine(LogBox, "• stop");
                             Thread.Sleep(500);
                         });
+                        break;
+                    #endregion
+                    #region countfruit
+                    case "countfruit":
+                        lineTask = CountFruit();
                         break;
                     #endregion
                     #region delayed <int time> <string msg>
@@ -165,13 +172,13 @@ namespace Demo.FakeConsoleApp
                 if (closeApp && !closing)
                 {
                     closing = true;
-                    if (delayedMessages > 0)
+                    if (backgroundTasks > 0)
                     {
                         AppendLine(LogBox, "Waiting on delayed messages...");
                     }
                     await Task.Run(() =>
                     {
-                        while (delayedMessages > 0) { /*wait until there are no delayed messages left*/ }
+                        while (backgroundTasks > 0) { /*wait until there are no delayed messages left*/ }
                     });
                     //doesn't make much of a difference wether it's awaited or not
                     AppendLine(LogBox, "(The app will now close in about 10 seconds)");
@@ -181,6 +188,47 @@ namespace Demo.FakeConsoleApp
                     Application.Exit();
                 }
             }
+        }
+
+        private Task CountFruit()
+        {
+            return Task.Run(async () =>
+            {
+                backgroundTasks++;
+                int apples = 200;
+                int pears = 175;
+                Task appleTask = CountApplesAsync(LogBox, apples);
+                Task pearTask = CountPearsAsync(LogBox, pears);
+                await Task.WhenAll(appleTask, pearTask);
+                await AppendLine(LogBox, $"You should have {apples} apple{(apples == 1 ? "" : "s")} and {pears} pear{(pears == 1 ? "" : "s")}");
+                backgroundTasks--;
+            });
+        }
+
+        private static Task CountApplesAsync(TextBox textBox, int appleCount)
+        {
+            return Task.Run(async () =>
+            {
+                for (int i = 1; i <= appleCount; i++)
+                {
+                    await AppendLine(textBox, $"{i} apple{(i == 1 ? "" : "s")}");
+                    Thread.Sleep(10);
+                }
+                await AppendLine(textBox, $"All apples have been counted. You have {appleCount} apple{(appleCount == 1 ? "" : "s")}");
+            });
+        }
+
+        private static Task CountPearsAsync(TextBox textBox, int pearCount)
+        {
+            return Task.Run(async () =>
+            {
+                for (int i = 1; i <= pearCount; i++)
+                {
+                    await AppendLine(textBox, $"{i} pear{(i == 1 ? "" : "s")}");
+                    Thread.Sleep(10);
+                }
+                await AppendLine(textBox, $"All pears have been counted. You have {pearCount} pear{(pearCount == 1 ? "" : "s")}");
+            });
         }
 
         private Task RickRoll()
@@ -227,10 +275,10 @@ namespace Demo.FakeConsoleApp
         {
             return Task.Run(() =>
             {
-                ctx.delayedMessages++;
+                ctx.backgroundTasks++;
                 Thread.Sleep(seconds * 1000);
                 AppendLine(ctx.LogBox, $"This message was requested {seconds} seconds ago{(string.IsNullOrEmpty(msg) ? "" : $": {msg}")}");
-                ctx.delayedMessages--;
+                ctx.backgroundTasks--;
             });
         }
     }
