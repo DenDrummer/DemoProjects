@@ -147,7 +147,7 @@ namespace EAP
         {
             for (int i = min; i <= max; i++)
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(1000);
                 if (i % 2 != 0)
                 {
                     Console.Write($"{i} is odd!\n");
@@ -180,7 +180,7 @@ namespace EAP
         {
             for (int i = min; i <= max; i++)
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(1000);
                 if (i % 2 != 0)
                 {
                     Console.Write($"{i} is odd!\n");

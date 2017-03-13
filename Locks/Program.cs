@@ -44,10 +44,10 @@ namespace Locks
 
         private static void Lock()
         {
-            Console.Write("Give balance: ");
+            Console.Write("Give money on bank account: ");
             string balance = Console.ReadLine();
             int balance_int;
-            Console.Write("Give amount: ");
+            Console.Write("Give amount to withdraw: ");
             string ammount = Console.ReadLine();
             int ammount_int;
             if (int.TryParse(balance, out balance_int) && int.TryParse(ammount, out ammount_int))

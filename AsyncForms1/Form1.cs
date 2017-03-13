@@ -40,5 +40,10 @@ namespace Demo.AsyncForms1
                 }
             });
         }
+
+        private void updateTimeButton_Click(object sender, EventArgs e)
+        {
+            TimeLabel.Text = DateTime.Now.ToString();
+        }
     }
 }

@@ -33,67 +33,73 @@ namespace Demo.AsyncForms1
         /// </summary>
         private void InitializeComponent()
         {
-            TimeLabel = new Label();
-            StuffProgressBar = new ProgressBar();
-            DoStuffButton = new Button();
-            updateTimeButton = new Button();
-            SuspendLayout();
+            this.TimeLabel = new System.Windows.Forms.Label();
+            this.StuffProgressBar = new System.Windows.Forms.ProgressBar();
+            this.DoStuffButton = new System.Windows.Forms.Button();
+            this.updateTimeButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // TimeLabel
             // 
-            TimeLabel.Anchor = (AnchorStyles.Top | AnchorStyles.Right);
-            TimeLabel.AutoSize = true;
-            TimeLabel.Location = new Point(151, 17);
-            TimeLabel.Name = "TimeLabel";
-            TimeLabel.Size = new Size(132, 17);
-            TimeLabel.TabIndex = 0;
-            TimeLabel.Text = "20/02/2017 10:12:0";
-            TimeLabel.TextAlign = ContentAlignment.TopRight;
+            this.TimeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TimeLabel.AutoSize = true;
+            this.TimeLabel.Location = new System.Drawing.Point(151, 17);
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(132, 17);
+            this.TimeLabel.TabIndex = 0;
+            this.TimeLabel.Text = "20/02/2017 10:12:0";
+            this.TimeLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // StuffProgressBar
             // 
-            StuffProgressBar.Anchor = ((AnchorStyles.Bottom | AnchorStyles.Left) | AnchorStyles.Right);
-            StuffProgressBar.Location = new Point(12, 57);
-            StuffProgressBar.Maximum = 10000000;
-            StuffProgressBar.Name = "StuffProgressBar";
-            StuffProgressBar.Size = new Size(190, 30);
-            StuffProgressBar.Step = 1;
-            StuffProgressBar.TabIndex = 1;
+            this.StuffProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.StuffProgressBar.Location = new System.Drawing.Point(12, 57);
+            this.StuffProgressBar.Maximum = 10000000;
+            this.StuffProgressBar.Name = "StuffProgressBar";
+            this.StuffProgressBar.Size = new System.Drawing.Size(190, 30);
+            this.StuffProgressBar.Step = 1;
+            this.StuffProgressBar.TabIndex = 1;
             // 
             // DoStuffButton
             // 
-            DoStuffButton.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
-            DoStuffButton.Location = new Point(208, 57);
-            DoStuffButton.Name = "DoStuffButton";
-            DoStuffButton.Size = new Size(75, 30);
-            DoStuffButton.TabIndex = 2;
-            DoStuffButton.Text = "Do Stuff";
-            DoStuffButton.UseVisualStyleBackColor = true;
-            DoStuffButton.Click += new EventHandler(DoStuffButton_Click);
+            this.DoStuffButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.DoStuffButton.Location = new System.Drawing.Point(208, 57);
+            this.DoStuffButton.Name = "DoStuffButton";
+            this.DoStuffButton.Size = new System.Drawing.Size(75, 30);
+            this.DoStuffButton.TabIndex = 2;
+            this.DoStuffButton.Text = "Do Stuff";
+            this.DoStuffButton.UseVisualStyleBackColor = true;
+            this.DoStuffButton.Click += new System.EventHandler(this.DoStuffButton_Click);
             // 
             // updateTimeButton
             // 
-            updateTimeButton.Anchor = ((AnchorStyles.Top | AnchorStyles.Left) | AnchorStyles.Right);
-            updateTimeButton.Location = new Point(12, 12);
-            updateTimeButton.Name = "updateTimeButton";
-            updateTimeButton.Size = new Size(133, 27);
-            updateTimeButton.TabIndex = 3;
-            updateTimeButton.Text = "Update Time";
-            updateTimeButton.UseVisualStyleBackColor = true;
+            this.updateTimeButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.updateTimeButton.Location = new System.Drawing.Point(12, 12);
+            this.updateTimeButton.Name = "updateTimeButton";
+            this.updateTimeButton.Size = new System.Drawing.Size(133, 27);
+            this.updateTimeButton.TabIndex = 3;
+            this.updateTimeButton.Text = "Update Time";
+            this.updateTimeButton.UseVisualStyleBackColor = true;
+            this.updateTimeButton.Click += new System.EventHandler(this.updateTimeButton_Click);
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 16F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(295, 99);
-            Controls.Add(updateTimeButton);
-            Controls.Add(DoStuffButton);
-            Controls.Add(StuffProgressBar);
-            Controls.Add(TimeLabel);
-            Name = "Form1";
-            Text = "Form1";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(295, 99);
+            this.Controls.Add(this.updateTimeButton);
+            this.Controls.Add(this.DoStuffButton);
+            this.Controls.Add(this.StuffProgressBar);
+            this.Controls.Add(this.TimeLabel);
+            this.MaximumSize = new System.Drawing.Size(400, 148);
+            this.MinimumSize = new System.Drawing.Size(313, 148);
+            this.Name = "Form1";
+            this.Text = "AsyncForm1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
