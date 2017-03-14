@@ -53,6 +53,12 @@ namespace MainMenuFormsApp
             Process.Start(p.ReturnPath() + "\\Parallel.exe");
         }
 
+        private void FCNAAButton_Click(object sender, EventArgs e)
+        {
+            Demo.FakeConsoleNonAsyncApp.Program p = new Demo.FakeConsoleNonAsyncApp.Program();
+            Process.Start(p.ReturnPath() + "\\Demo.FakeConsoleNonAsyncApp.exe");
+        }
+
         private void QuitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();

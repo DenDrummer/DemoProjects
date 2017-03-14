@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locks", "Locks\Locks.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainMenuFormsApp", "MainMenuFormsApp\MainMenuFormsApp.csproj", "{6B2343F7-EB2D-467A-8690-7087A8792965}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleFakerNonAsyncApp", "ConsoleFakerNonAsyncForm\ConsoleFakerNonAsyncApp.csproj", "{94330CEC-3747-4F45-AE0B-A9CBE9AB2A88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{6B2343F7-EB2D-467A-8690-7087A8792965}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B2343F7-EB2D-467A-8690-7087A8792965}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B2343F7-EB2D-467A-8690-7087A8792965}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94330CEC-3747-4F45-AE0B-A9CBE9AB2A88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94330CEC-3747-4F45-AE0B-A9CBE9AB2A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94330CEC-3747-4F45-AE0B-A9CBE9AB2A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94330CEC-3747-4F45-AE0B-A9CBE9AB2A88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

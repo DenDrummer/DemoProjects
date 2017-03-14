@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6B2343F7-EB2D-467A-8690-7087A8792965}</ProjectGuid>
+    <ProjectGuid>{94330CEC-3747-4F45-AE0B-A9CBE9AB2A88}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MainMenuFormsApp</RootNamespace>
-    <AssemblyName>MainMenuFormsApp</AssemblyName>
+    <RootNamespace>Demo.FakeConsoleNonAsyncApp</RootNamespace>
+    <AssemblyName>Demo.FakeConsoleNonAsyncApp</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainMenuForm.cs">
+    <Compile Include="ConsoleFakerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenuForm.Designer.cs">
-      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    <Compile Include="ConsoleFakerForm.Designer.cs">
+      <DependentUpon>ConsoleFakerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainMenuForm.resx">
-      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    <EmbeddedResource Include="ConsoleFakerForm.resx">
+      <DependentUpon>ConsoleFakerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,40 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\APM\APM.csproj">
-      <Project>{ef810564-1519-43ea-af47-1975840a4a89}</Project>
-      <Name>APM</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AsyncForms1\AsyncForms1.csproj">
-      <Project>{819c07f4-42e1-47f0-b4c3-9dafaeca742a}</Project>
-      <Name>AsyncForms1</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AsyncFruitCounting\AsyncFruitCounting.csproj">
-      <Project>{aafb2ca2-907f-4eea-b703-756b4a07e488}</Project>
-      <Name>AsyncFruitCounting</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ConsoleFakerNonAsyncForm\ConsoleFakerNonAsyncApp.csproj">
-      <Project>{94330cec-3747-4f45-ae0b-a9cbe9ab2a88}</Project>
-      <Name>ConsoleFakerNonAsyncApp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EAP\EAP.csproj">
-      <Project>{4ebbbb2f-5fef-4798-885d-83cbf0726296}</Project>
-      <Name>EAP</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FakeConsoleApp\FakeConsoleApp.csproj">
-      <Project>{5f2446ea-54ac-41dc-afff-dc031073af12}</Project>
-      <Name>FakeConsoleApp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Locks\Locks.csproj">
-      <Project>{b06130a1-9c68-4854-8513-fcd5600babf8}</Project>
-      <Name>Locks</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Parallel\ParallelCode.csproj">
-      <Project>{f86abec3-4728-49ac-a8c5-b55d2a158ea5}</Project>
-      <Name>ParallelCode</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
