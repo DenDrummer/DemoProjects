@@ -29,7 +29,7 @@ namespace Demo.FakeConsoleNonAsyncApp
         private void Program()
         {
             AppendLine(LogBox, "Welcome ( ° v°)b");
-            AppendLine(LogBox, "This project has been built with Task");
+            AppendLine(LogBox, "This project has been built without TAP except for the clock");
             AppendLine(LogBox, "Type \"commands\" for a list of commands");
         }
 
