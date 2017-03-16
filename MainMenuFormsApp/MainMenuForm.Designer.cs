@@ -188,6 +188,7 @@ namespace MainMenuFormsApp
             this.MinimumSize = new System.Drawing.Size(260, 420);
             this.Name = "MainMenuForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
             this.ResumeLayout(false);
 
